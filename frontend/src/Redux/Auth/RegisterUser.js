@@ -21,5 +21,26 @@ export const registerUser = createAsyncThunk('auth/register', async (userData) =
     },
 )
 
+const registerSlice = createSlice({
+    name: 'Register-user',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+            .addCase(registerUser.pending, (state)=>{
+                state.loading = true; 
+            })
+            .addCase(registerUser.fulfilled, (state, action)=> {
+                state.user = action.payload;
+                state.loading = false;
+                state.success = true;
+            })
+            .addCase(registerUser.rejected, (state, action) => {
+                state.loading = false;
+                state.success = false;
+                state.error = action.payload
+            })
+    }
+})
 
 export default registerSlice.reducer;
