@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../Authentication/Auth.css";
+import { registerUser } from "../Redux/Auth/RegisterUser";
 
 const Register = () => {
     const dispatch = useDispatch();
