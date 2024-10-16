@@ -1,0 +1,120 @@
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-firstdiv {
+    display: flex;
+    align-items: center;
+}
+
+.header-img,
+.header-span {
+    margin-right: 50px;
+}
+
+.header-h2 {
+    font-size: 29px;
+    font-family: Lexend, sans-serif;
+}
+
+.header-seconddiv {
+    display: flex;
+    align-items: center;
+}
+
+.header-listing {
+    margin-right: 18px;
+    padding: 8px 9px;
+    color: blue;
+    font-weight: 700;
+    font-family: Lexend, sans-serif;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.header-user {
+    font-family: Lexend, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.header-span {
+    font-size: 16px;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-right: 40px;
+    margin-left: 65px;
+}
+
+.search-section {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    border: 1px solid black;
+    padding-left: 15px;
+    font-family: lexend, sans-serif;
+}
+
+.filter-button {
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    border: 1px solid black;
+    padding-left: 50px;
+    font-family: lexend, sans-serif;
+    background-color: #fff;
+    color: #081e4a;
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 25px;
+    pointer-events: none;
+}
+
+.search-container {
+    position: relative;
+}
+
+.filter-container {
+    position: relative;
+}
+
+.filter-container .material-symbols-outlined {
+    left: 10%;
+    font-size: 23px;
+}
+
+.side-bar ul {
+    list-style-type: none;
+    gap: 0;
+}
+
+.side-bar li {
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.side-bar li .material-symbols-outlined {
+    position: relative;
+    left: 40px;
+}
