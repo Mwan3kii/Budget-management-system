@@ -3,6 +3,7 @@ import { useState } from "react";
 import { loginUser } from "../Redux/Auth/LoginUser";
 import { useDispatch, useSelector } from "react-redux";
 import "../Authentication/Auth.css";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -42,6 +43,10 @@ const Login = () => {
         } catch (err) {
           console.log(err);
         }
+        const navigate = useNavigate();
+        if (success) {
+          navigate('/home');
+      }
         
       };
 
