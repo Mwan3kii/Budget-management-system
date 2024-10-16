@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { loading, success, error } = useSelector((state) => state.registereduser);
   const [values, setValues] = useState({
     name: "",
@@ -49,7 +50,7 @@ const Register = () => {
     } catch (err) {
       console.log(err);
     }
-    const navigate = useNavigate();
+    
     if (success) {
       navigate('/home');
     }

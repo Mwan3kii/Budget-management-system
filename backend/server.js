@@ -6,7 +6,7 @@ const sequelize = require('./config/sequelize');
 connectDatabase();
 sequelize.sync();
 
-dotenv.config({ path: 'backend/config/config.env' })
+dotenv.config({ path: 'config/config.env' })
 
 const port = process.env.PORT
 const node_env = process.env.NODE_ENV

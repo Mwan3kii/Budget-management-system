@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { loading, success, error } = useSelector((state) => state.loginuser);
     const [values, setValues] = useState({
         name: "",
@@ -43,7 +44,7 @@ const Login = () => {
         } catch (err) {
           console.log(err);
         }
-        const navigate = useNavigate();
+        
         if (success) {
           navigate('/home');
       }
@@ -82,6 +83,7 @@ const Login = () => {
             name="name"
             value={values.name}
             onChange={handleInputChange}
+            required
           />
         )}
 
@@ -97,7 +99,7 @@ const Login = () => {
         )}
         
 
-        {submitted && !values.email && (
+        {submitted && !values.email && !values.name && (
           <span id="email-error">Please enter email</span>
         )}
         {!valid && (

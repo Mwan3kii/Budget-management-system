@@ -4,11 +4,20 @@ import './Header.css';
 import { useNavigate } from 'react-router-dom';
 
 
+
 const Aside = () => {
   const navigate = useNavigate();
   const handleAddCategory = () => {
     navigate('/category');
   };
+  // const handleLogout = (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     navigate('/logout');
+  //   } catch (error) {
+  //     console.error('Error logging out', error);
+  //   }
+  // };
   return (
     <aside className="side-bar">
         <ul className='pl-1' style={{ marginLeft: '1px' }}>
@@ -21,7 +30,9 @@ const Aside = () => {
           </button>
           <li className="logout-bar">
             <span className="material-symbols-outlined">logout</span>
-            <Link to="#"></Link>Logout
+            <Link to="/logout" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    Logout
+                </Link>
           </li>
         </ul>
       </aside>

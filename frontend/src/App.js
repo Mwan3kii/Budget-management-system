@@ -7,18 +7,19 @@ import CategoryPage from './Homepage/CategoryPage';
 import CategoryDetails from './Homepage/CategoryDetails';
 import Menu from './Header/Menu';
 import SplashScreen from './LandingPage/SplashScreen';
+import Logout from './Authentication/Logout';
 
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Menu />
         <Routes>
           <Route path="/" element={<SplashScreen />} />
           <Route path='/signup' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/home' element={<HomePage/>}/>
+          <Route path='/logout' element={<Logout/>}/>
           <Route path="/category" element={<CategoryPage />} />
           <Route path='/home/:id' element={<CategoryDetails/>}/>
         </Routes>
