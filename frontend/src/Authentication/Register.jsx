@@ -3,67 +3,72 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../Authentication/Auth.css";
 import { registerUser } from "../Redux/Auth/RegisterUser";
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-    const dispatch = useDispatch();
-    const { loading, success, error } = useSelector((state) => state.registereduser);
-    const [values, setValues] = useState({
-        name: "",
-        email: "",
-        bio: "",
-        password: ""
-    });
+  const dispatch = useDispatch();
+  const { loading, success, error } = useSelector((state) => state.registereduser);
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    bio: "",
+    password: ""
+  });
 
-    const handleInputChange = (event) => {
-        event.preventDefault();
+  const handleInputChange = (event) => {
+    event.preventDefault();
 
-        const { name, value } = event.target;
-        setValues((values) => ({
-            ...values,
-            [name]: value
-        }));
-    };
+    const { name, value } = event.target;
+    setValues((values) => ({
+      ...values,
+      [name]: value
+    }));
+  };
 
-    const [submitted, setSubmitted] = useState(false);
-    const [valid, setValid] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (values.name && values.email && values.bio && values.password) {
-          setValid(true);
-        }
-        if (values.password.length < 8) {
-          alert("Password must be at least 8 characters long.");
-          return;
-        }
-        const userData = {
-          email: values.email,
-          name: values.name,
-          bio: values.bio,
-          password: values.password
-        }
-        try {
-          dispatch(registerUser(userData));
-          setSubmitted(true);
-        } catch (err) {
-          console.log(err);
-        }
-        
-      };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (values.name && values.email && values.bio && values.password) {
+      setValid(true);
+    }
+    if (values.password.length < 8) {
+      alert("Password must be at least 8 characters long.");
+      return;
+    }
+    const userData = {
+      email: values.email,
+      name: values.name,
+      bio: values.bio,
+      password: values.password
+    }
+    try {
+      dispatch(registerUser(userData));
+      setSubmitted(true);
+    } catch (err) {
+      console.log(err);
+    }
+    const navigate = useNavigate();
+    if (success) {
+      navigate('/home');
+    }
 
-    return (
+  };
+
+  return (
     <div className="form-container">
       <form className="register-form" onSubmit={handleSubmit}>
         {loading ? (
-            <div className="spinner-border"></div> ) : ( success ? submitted && valid && (
-          <div className="success-message">
-            <h3>
-              {" "}
-              Welcome {values.name}{" "}
-            </h3>
-            <div> Your registration was successful! </div>
-          </div>
-        ): (<></>))}
+          <div className="spinner-border"></div>) : (success ? submitted && valid && (
+            <div className="success-message">
+              <h3>
+                {" "}
+                Welcome {values.name}{" "}
+              </h3>
+              <div> Your registration was successful! </div>
+            </div>
+          ) : (<></>))}
         {!valid && (
           <input
             className="form-field"
@@ -108,7 +113,7 @@ const Register = () => {
             onChange={handleInputChange}
           />
         )}
-        
+
 
         {submitted && !values.email && (
           <span id="email-error">Please enter an email address</span>
