@@ -7,13 +7,16 @@ import HomePage from './Homepage/HomePage';
 import CategoryPage from './Homepage/CategoryPage';
 import CategoryDetails from './Homepage/CategoryDetails';
 import Menu from './Header/Menu';
+import SplashScreen from './LandingPage/SplashScreen';
+
 
 function App() {
   return (
     <div className="App">
       <Router>
-      <Menu />
+        <Menu />
         <Routes>
+          <Route path="/" element={<SplashScreen />} />
           <Route path='/signup' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/home' element={<HomePage/>}/>
