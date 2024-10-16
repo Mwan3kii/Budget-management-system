@@ -8,6 +8,7 @@ import CategoryDetails from './Homepage/CategoryDetails';
 import Menu from './Header/Menu';
 import SplashScreen from './LandingPage/SplashScreen';
 import Logout from './Authentication/Logout';
+import LandingPage from './Splashscreen/LandingPage';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<SplashScreen />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path='/signup' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/home' element={<HomePage/>}/>
