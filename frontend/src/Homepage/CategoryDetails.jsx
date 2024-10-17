@@ -31,9 +31,7 @@ const CategoryDetails = () => {
         <div>
             <Menu />
             <div className="container container-fluid">
-            <span onClick={() => navigate(-1)}>
-                 🔙 Back
-            </span>
+            
                 <h2 className="mt-5 ml-5">Category Details</h2>
                 <div className="row justify-content-around mt-5 user-info">
                     {loading ? (<div class="spinner-border"></div>) : (<>

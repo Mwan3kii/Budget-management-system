@@ -25,21 +25,22 @@ const HomePage = () => {
       <Menu />
       <div className='main-content'>
         <Aside />
-        <div className='display-movies'>
-          {/* <h1 style={{ marginLeft: '50px' }}>Categories</h1> */}
-          {loading ? (<div class="spinner-border"></div>
-          ) : (
-            categories.map((item) => (
-              <DisplayCategories item={item} key={item.id} />
-            ))
-          )
-          }
-        </div>
-        {/* <button onClick={handleAddCategory} className="btn btn-primary">
+          <div className='display-movies'>
+            {/* <h1 style={{ marginLeft: '50px' }}>Categories</h1> */}
+            {loading ? (<div class="spinner-border"></div>
+            ) : (
+              categories.map((item) => (
+                <DisplayCategories item={item} key={item.id} />
+              ))
+            )
+            }
+          </div>
+          {/* <button onClick={handleAddCategory} className="btn btn-primary">
           Add New Category
         </button> */}
+        </div>
       </div>
-      </div>
+  
   );
 };
 

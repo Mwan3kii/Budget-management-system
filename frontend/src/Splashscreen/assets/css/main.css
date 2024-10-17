@@ -105,7 +105,7 @@
 	}
 
 	body {
-		background: #f5f5f5;
+		background-color: #e3ecef;
 	}
 
 	body, input, select, textarea {
@@ -142,13 +142,15 @@
 
 	p {
 		margin: 0 0 2em 0;
+		color: black;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #646464;
-		font-weight: 300;
+		color: black;
+		font-weight: 500;
 		line-height: 1em;
 		margin: 0 0 0.5em 0;
+		font-size: large;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2018,7 +2020,7 @@
 	}
 
 	header p {
-		color: #999;
+		color: black;
 		position: relative;
 		margin: 0 0 1.5em 0;
 		font-style: italic;
@@ -2069,10 +2071,10 @@
 	}
 
 	label {
-		color: #646464;
+		color: black;
 		display: block;
-		font-size: 0.9em;
-		font-weight: 300;
+		font-size: 20px;
+		font-weight: 400;
 		margin: 0 0 1em 0;
 	}
 
@@ -2085,7 +2087,7 @@
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-		background-color: #f8f8f8;
+		background-color: white;
 		border-radius: 6px;
 		border: solid 1px #e5e5e5;
 		color: inherit;
@@ -2164,11 +2166,11 @@
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: #777;
+			color: black;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
-			font-weight: 300;
+			font-weight: 400;
 			padding-left: 2.55em;
 			padding-right: 0.75em;
 			position: relative;
@@ -2493,7 +2495,7 @@
 	ul {
 		list-style: disc;
 		margin: 0 0 2em 0;
-		padding-left: 1em;
+		padding-left: 4px;
 	}
 
 		ul li {
@@ -2746,7 +2748,7 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #666;
+		background-color: #4caf50;
 		border-radius: 6px;
 		border: 0;
 		color: #ffffff;
@@ -2944,7 +2946,7 @@
 	}
 
 		#header h1 {
-			color: inherit;
+			color: black;
 			height: inherit;
 			left: 1.25em;
 			line-height: inherit;
@@ -3163,7 +3165,7 @@
 	#banner {
 		background-attachment: scroll,							fixed;
 		background-color: #666;
-		background-image: url("../../images/budget.png");
+		background-image: url("../../images/landing.png");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
@@ -3747,12 +3749,15 @@
 
 				#banner p {
 					font-size: 1.25em;
+					font-weight: 400;
+					color: white;
 				}
 
 		/* Main */
 
 			#main {
 				padding: 4em 0 0 0;
+				background-color: #A9BA9D;
 			}
 
 				#main > header {

@@ -3,13 +3,15 @@
     justify-content: space-between;
     align-items: center;
     background-color: #3778c2;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
     color: white;
 }
 
 .header-firstdiv {
     display: flex;
     align-items: center;
+    padding-left: 90px;
 }
 
 .header-img,
@@ -18,9 +20,10 @@
 }
 
 .header-h2 {
-    font-size: 29px;
+    font-size: 25px;
     font-family: Lexend, sans-serif;
     margin-left: 50px;
+    margin-top: 10px;
 }
 
 .header-seconddiv {
@@ -52,7 +55,8 @@
 }
 
 .header-span {
-    font-size: 16px;
+    font-size: 40px;
+    color: rgb(3, 43, 3);
 }
 
 .header-section {
@@ -136,7 +140,7 @@
 }
 
 li.logout-bar {
-    margin-top: 200px;
+    margin-top: 350px;
 }
 
 .side-bar {
@@ -240,7 +244,7 @@ li.logout-bar {
     margin: auto;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     padding: 10px;
-    margin-top: 50px;
+    margin-top: 30px;
     height: 70vh;
 }
 .category-page {

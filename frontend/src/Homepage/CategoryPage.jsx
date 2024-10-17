@@ -50,7 +50,7 @@ const CategoryPage = ({ name, description }) => {
     <div>
       <Menu />
     <div className='category-page'>
-      <h1 style={{ textAlign: 'center' }}>Add new category below</h1>
+      <h1 style={{ textAlign: 'center', paddingTop: '5px' }}>Add new category below</h1>
       <div className='category-container'>
         <form onSubmit={handleSubmit}>
           {loading ? (
@@ -71,7 +71,7 @@ const CategoryPage = ({ name, description }) => {
               required
             />
           </div>
-          <div class="mb-3 mt-3">
+          <div class="mb-3 mt-3 mb-4">
             <label className="form-label">Description:</label>
             <input
               type="text"
@@ -83,8 +83,8 @@ const CategoryPage = ({ name, description }) => {
               onChange={handleChange}
             />
           </div>
-          <div class="d-grid gap-3">
-            <button type="submit" className="btn btn-success btn-block mt-5">Add Category</button>
+          <div class="d-grid gap-3 mt-3">
+            <button type="submit" className="main-dynamic-bottom-section button">Add Category</button>
           </div>
         </form>
       </div>

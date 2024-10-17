@@ -10,9 +10,7 @@
 }
 
 .header-img,
-.header-span {
-    margin-right: 50px;
-}
+
 
 .header-h2 {
     font-size: 29px;
@@ -56,8 +54,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-    margin-right: 40px;
-    margin-left: 65px;
+    margin-right: 10px;
+    margin-left: 50px;
 }
 
 .search-section {
