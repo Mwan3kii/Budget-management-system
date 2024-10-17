@@ -2,7 +2,7 @@
 
 This project is a **Mobile Web Application** designed to help users manage their personal budget effectively. Users can register and log in, ensuring their data remains private and secure. Once authenticated, they can create categories like "Groceries," and log their transactions under each category.
 
-![Screenshot](./website/static/img/proactivee.png)
+![Screenshot](./frontend/src/Assets/Images/website.png)
 
 
 ## 📝 Table of Contents
