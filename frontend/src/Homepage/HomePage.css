@@ -22,7 +22,7 @@
 .header-h2 {
     font-size: 25px;
     font-family: Lexend, sans-serif;
-    margin-left: 50px;
+    margin-left: 10px;
     margin-top: 10px;
 }
 
@@ -55,8 +55,9 @@
 }
 
 .header-span {
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(3, 43, 3);
+    margin-left: 900px;
 }
 
 .header-section {
