@@ -21,11 +21,11 @@ const Aside = () => {
   return (
     <aside className="side-bar">
         <ul className='pl-1' style={{ marginLeft: '1px' }}>
-          <button onClick={handleAddCategory} className="btn-btn-color: black mt-5 p-2">
-          Add New Category
+          <button onClick={handleAddCategory} style={{ color: 'black', fontSize: '20px' }} className="btn mt-5 p-2">
+          Add Category
           </button>
           <li className="logout-bar">
-            <Link to="/logout" style={{ textDecoration: 'underline', color: 'black', fontSize: '22px' }}>
+            <Link to="/logout" style={{ color: 'black', fontSize: '22px' }}>
                     Logout
                 </Link>
           </li>

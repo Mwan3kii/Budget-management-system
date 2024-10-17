@@ -7,6 +7,7 @@ import CategoryPage from './Homepage/CategoryPage';
 import CategoryDetails from './Homepage/CategoryDetails';
 import Logout from './Authentication/Logout';
 import LandingPage from './Splashscreen/LandingPage';
+import About from './Splashscreen/About';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/logout' element={<Logout/>}/>
           <Route path="/category" element={<CategoryPage />} />
           <Route path='/home/:id' element={<CategoryDetails/>}/>
+          <Route path='/about' element={<About/>}/>
         </Routes>
       </Router>
     </div>

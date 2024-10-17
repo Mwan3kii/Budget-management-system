@@ -2524,6 +2524,7 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
+			color: palevioletred;
 		}
 
 			ul.icons li {
@@ -2536,7 +2537,7 @@
 				}
 
 				ul.icons li .icon {
-					color: inherit;
+					color: black;
 				}
 
 					ul.icons li .icon:before {
@@ -2999,10 +3000,12 @@
 					}
 
 					#header nav > ul > li a:not(.button) {
-						color: #fff;
+						color: black;
 						display: inline-block;
 						text-decoration: none;
 						border: 0;
+						font-size: large;
+						font-weight: 500;
 					}
 
 						#header nav > ul > li a:not(.button).icon:before {
@@ -3370,7 +3373,7 @@
 		}
 
 		#cta .formerize-placeholder {
-			color: rgba(255, 255, 255, 0.75) !important;
+			color: rgba(17, 16, 16, 0.75) !important;
 		}
 
 /* Wide */

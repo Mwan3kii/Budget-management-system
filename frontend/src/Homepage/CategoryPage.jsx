@@ -71,7 +71,7 @@ const CategoryPage = ({ name, description }) => {
               required
             />
           </div>
-          <div class="mb-3 mt-3 mb-4">
+          <div class="mb-3 mt-4 mb-4">
             <label className="form-label">Description:</label>
             <input
               type="text"
@@ -83,7 +83,7 @@ const CategoryPage = ({ name, description }) => {
               onChange={handleChange}
             />
           </div>
-          <div class="d-grid gap-3 mt-3">
+          <div class="d-grid gap-3 mt-5">
             <button type="submit" className="main-dynamic-bottom-section button">Add Category</button>
           </div>
         </form>

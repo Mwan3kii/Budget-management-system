@@ -8,9 +8,9 @@ const Menu = () => {
     return (
         <header className="header-top">
             <div className="header-firstdiv">
-                <h2 className="header-h2">BudgetPlan</h2>
+                <h2 className="header-h2">BudgetPlan dashboard</h2>
                 <span className='header-span' onClick={() => navigate(-1)}>
-                 🔙
+                🔙
                 </span>
             </div>
         </header>

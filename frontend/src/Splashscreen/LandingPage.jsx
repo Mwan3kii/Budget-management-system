@@ -2,20 +2,22 @@ import React from 'react'
 import './assets/css/main.css';
 import { Link } from 'react-router-dom';
 
-
 const LandingPage = () => {
   return (
     <div class="landing is-preload">
 		<div id="page-wrapper">
 				<header id="header" class="alt">
-					<h1>Welcome to BudgetPlan:)</h1>
+					<h1>BudgetPlan</h1>
 					<nav id="nav">
+					<ul>
+						<li><Link to="/about">About</Link></li>
+					</ul>
 					</nav>
 				</header>
 
 			
 				<section id="banner">
-					<h2>BudgetPlan</h2>
+					<h2>BudgetPlan💰</h2>
 					<p>Mobile web application for managing your budget and expenses efficiently.</p>
 					<ul class="actions special">
 						<li><Link to="/signup" class="button primary">Sign Up</Link></li>

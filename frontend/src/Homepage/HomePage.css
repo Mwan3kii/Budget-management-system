@@ -24,6 +24,7 @@
     font-family: Lexend, sans-serif;
     margin-left: 0px;
     margin-top: 10px;
+    color: white;
 }
 
 .header-seconddiv {
@@ -57,7 +58,7 @@
 .header-span {
     font-size: 30px;
     color: rgb(3, 43, 3);
-    margin-left: 900px;
+    margin-left: 750px;
 }
 
 .header-section {
@@ -142,6 +143,7 @@
 
 li.logout-bar {
     margin-top: 350px;
+    font-weight: normal;
 }
 
 .side-bar {
