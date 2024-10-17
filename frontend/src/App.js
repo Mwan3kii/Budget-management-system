@@ -5,8 +5,6 @@ import Register from './Authentication/Register';
 import HomePage from './Homepage/HomePage';
 import CategoryPage from './Homepage/CategoryPage';
 import CategoryDetails from './Homepage/CategoryDetails';
-import Menu from './Header/Menu';
-import SplashScreen from './LandingPage/SplashScreen';
 import Logout from './Authentication/Logout';
 import LandingPage from './Splashscreen/LandingPage';
 
