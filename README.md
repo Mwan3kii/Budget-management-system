@@ -89,10 +89,7 @@ npm install
 ```
 npm start
 ```
-9. **Access the app in your browser**
-```
-http://localhost:3000
-```
+9. **Access the app in your browser** `http://localhost:3000`
 ### Deployed site:
 - **Deployed Site**: [BudgetPlan](https://proactive-crime-site.onrender.com/)
 
