@@ -12,7 +12,7 @@ This project is a **Mobile Web Application** designed to help users manage their
 - [How It Works](#how-it-works)
 - [Installation](#installation)
 - [Technologies](#technologies)
-- [Deployed site](#site)
+- [Deployed site](#deployed-site)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -33,7 +33,7 @@ This project is a **Mobile Web Application** designed to help users manage their
 
 7. **🚪 Logout**: Sign out of your account to keep your data safe and secure.
 
-### ⚙️ How It Works
+### How It Works
 
 - **Register and log in**: Ensuring that the data remains private to them.
 
@@ -43,10 +43,9 @@ This project is a **Mobile Web Application** designed to help users manage their
 
 - **See the money spent on each category**: Users can view the total spending in each category, providing a clear overview of spending habits.
 
-## 🛠 Installation
+## Installation
 
-
-To get started with the app, follow these steps:
+🛠 To get started with the app, follow these steps:
 
 1. **Clone the repository**:
    ```bash
@@ -97,7 +96,7 @@ http://localhost:3000
 ### Deployed site:
 - **Deployed Site**: [BudgetPlan](https://proactive-crime-site.onrender.com/)
 
-## 🛠 Technologies
+## Technologies
 
 - **Frontend**:
   - React
@@ -110,16 +109,16 @@ http://localhost:3000
   - Mysql
   - JWT for authentication
 
-## 🤝 Contributing
+## Contributing
 
-Contributions are welcome! If you'd like to collaborate or propose improvements, feel free to submit a pull request. Please make sure to:
+Contributions are welcome!🤝 If you'd like to collaborate or propose improvements, feel free to submit a pull request. Please make sure to:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bug fix.
 3. Submit your changes with a clear commit message.
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License. See the [LICE
+This project is licensed under the MIT License📄. See the [LICE
 NSE](LICENSE) file for details.
 
