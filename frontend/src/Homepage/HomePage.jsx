@@ -21,6 +21,8 @@ const HomePage = () => {
   };
   console.log(categories);
   return (
+    <div>
+      <Menu />
       <div className='main-content'>
         <Aside />
         <div className='display-movies'>
@@ -36,6 +38,7 @@ const HomePage = () => {
         {/* <button onClick={handleAddCategory} className="btn btn-primary">
           Add New Category
         </button> */}
+      </div>
       </div>
   );
 };

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createCategory, displayCategories } from '../Redux/UserCategories/categoriesSlice';
 import "../Authentication/Auth.css";
 import './HomePage.css';
+import Menu from '../Header/Menu';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -46,7 +47,8 @@ const CategoryPage = ({ name, description }) => {
   };
 
   return (
-    
+    <div>
+      <Menu />
     <div className='category-page'>
       <h1 style={{ textAlign: 'center' }}>Add new category below</h1>
       <div className='category-container'>
@@ -86,6 +88,7 @@ const CategoryPage = ({ name, description }) => {
           </div>
         </form>
       </div>
+    </div>
     </div>
   )
 }
