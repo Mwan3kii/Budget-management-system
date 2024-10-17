@@ -143,6 +143,8 @@
 	p {
 		margin: 0 0 2em 0;
 		color: black;
+		font-size: large;
+		font-weight: 500;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -203,7 +205,7 @@
 	hr {
 		border: 0;
 		border-bottom: solid 2px #e5e5e5;
-		margin: 2em 0;
+		
 	}
 
 		hr.major {
@@ -1971,6 +1973,7 @@
 		margin: 0 auto;
 		max-width: calc(100% - 5em);
 		width: 60em;
+		background-color: white;
 	}
 
 		.container.xsmall {
@@ -2494,7 +2497,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 2em 0;
+		margin: 0 0 0 0;
 		padding-left: 4px;
 	}
 
@@ -2749,7 +2752,7 @@
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: #4caf50;
-		border-radius: 6px;
+		border-radius: 0px;
 		border: 0;
 		color: #ffffff;
 		cursor: pointer;
@@ -2757,10 +2760,11 @@
 		font-weight: 400;
 		height: 3em;
 		line-height: 3em;
-		padding: 0 2em;
+		padding: 0 6em;
 		text-align: center;
 		text-decoration: none;
 		white-space: nowrap;
+		margin-bottom: 15px;
 	}
 
 		input[type="submit"]:hover,
@@ -3185,13 +3189,14 @@
 		#banner h2 {
 			font-size: 3.5em;
 			line-height: 1em;
-			margin: 0 0 0.5em 0;
+			margin: 0 0 1.5em 0;
 			padding: 0;
+
 		}
 
 		#banner p {
 			font-size: 1.25em;
-			margin-bottom: 1.75em;
+			margin-bottom: 1.95em;
 		}
 
 		#banner input[type="submit"],
@@ -3680,7 +3685,7 @@
 			}
 
 			h4 {
-				font-size: 1em;
+				font-size: 1.4em;
 			}
 
 		/* Section/Article */

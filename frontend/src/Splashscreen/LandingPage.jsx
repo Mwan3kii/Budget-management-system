@@ -8,9 +8,8 @@ const LandingPage = () => {
     <div class="landing is-preload">
 		<div id="page-wrapper">
 				<header id="header" class="alt">
-					<h1>BudgetPlan</h1>
+					<h1>Welcome to BudgetPlan:)</h1>
 					<nav id="nav">
-						
 					</nav>
 				</header>
 
@@ -39,7 +38,7 @@ const LandingPage = () => {
 					<section class="box special features">
 						<div class="features-row">
 							<section>
-								<span class="icon solid major fa-cloud accent4"></span>
+								<span class="icon solid major fa-wallet accent4"></span>
 								<h3>Track Your Expenses</h3>
 								<p>Easily monitor your daily expenses to understand your spending habits.</p>
 							</section>
@@ -49,38 +48,28 @@ const LandingPage = () => {
 								<p>Your financial data is safe with our top-notch security measures.</p>
 							</section>
 						</div>
-					</section>
-
-					<div class="row">
-						<div class="col-6 col-12-narrower">
-
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+						<div class="features-row">
+							<section>
+								<span class="icon solid major fa-credit-card accent4"></span>
 								<h3>Set Your Budgets</h3>
 								<p>Create and customize budgets for different categories to better manage your finances.</p>
 							</section>
-
-						</div>
-						<div class="col-6 col-12-narrower">
-
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h3>Simplified Transaction Management</h3>
-								<p>Effortlessly create and categorize transactions for better budget oversight. Our app allows you to add and delete transactions, ensuring that you stay on top of your financial game.</p>
+							<section>
+								<span class="icon solid major fa-receipt accent5"></span>
+								<h3>Transaction Management</h3>
+								<p>Create and categorize transactions for better budget oversight</p>
 							</section>
-
 						</div>
-					</div>
+					</section>
 
 				</section>
-
 			
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="https://github.com/Mwan3kii/Budget-management-system.git" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; BudgetPlan. All rights reserved.</li><li>Design: <a href="http://html5up.net">Agatha Mwaniki</a></li>
 					</ul>
 				</footer>
 

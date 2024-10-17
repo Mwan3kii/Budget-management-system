@@ -83,7 +83,6 @@ const Login = () => {
             name="name"
             value={values.name}
             onChange={handleInputChange}
-            required
           />
         )}
 
@@ -95,11 +94,12 @@ const Login = () => {
             name="password"
             value={values.password}
             onChange={handleInputChange}
+            required
           />
         )}
         
 
-        {submitted && !values.email && !values.name && (
+        {submitted && !values.email && (
           <span id="email-error">Please enter email</span>
         )}
         {!valid && (

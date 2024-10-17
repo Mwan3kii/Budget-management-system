@@ -7,7 +7,6 @@ import Transaction from './Transaction';
 import { createTransaction } from '../Redux/Transactions/transactionSlice';
 import { displaySingleTransaction } from '../Redux/Transactions/displayTransactions';
 import Menu from '../Header/Menu';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const CategoryDetails = () => {
@@ -32,28 +31,36 @@ const CategoryDetails = () => {
             <Menu />
             <div className="container container-fluid">
             
-                <h2 className="mt-5 ml-5">Category Details</h2>
-                <div className="row justify-content-around mt-5 user-info">
+                <h2 className="mt-3 ml-5">Category Details</h2>
+                <div className="row mt-3 user-info d-flex">
                     {loading ? (<div class="spinner-border"></div>) : (<>
-                        <div className="col-12 col-md-5">
-                            <h4>Category Name</h4>
-                            <p>{category.name}</p>
+                        <div className="col-11 col-md-5">
+                            <div className="d-flex gap-4">
+                                <h4>Category Name:</h4>
+                                <p>{category.name}</p>
+                            </div>
+                            <hr />
+                            <div className="d-flex gap-4">
+                                <h4>Description:</h4>
+                                <p>{category.description}</p>
+                            </div>
+                            <hr />
+                            <div className="d-flex gap-4">
+                                <h4>Transaction</h4>
+                                <ul>
+                                    {singleTran ? (
+                                        <li>
+                                            <h4>{singleTran.name}</h4>
+                                            <p>Amount: Ksh{singleTran.amount}</p>
+                                        </li>
+                                    ) : (
+                                        <p>No transactions available.</p>
+                                    )}
+                                </ul>
+                            </div>
+                            <hr />
 
-                            <h4>Description</h4>
-                            <p>{category.description}</p>
-                            <h4>Transactions</h4>
-                            <ul>
-                                {singleTran ? (
-                                    <li>
-                                        <h2>{singleTran.name}</h2>
-                                        <p>Amount: Ksh{singleTran.amount}</p>
-                                    </li>
-                                ) : (
-                                    <p>No transactions available.</p>
-                                )}
-                            </ul>
-
-                            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <button type="button" className="main-dynamic-bottom-section button" data-bs-toggle="modal" data-bs-target="#myModal">
                                 Add transaction
                             </button>
                             <Transaction categoryId={id} />
