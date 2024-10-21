@@ -30,7 +30,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (values.name && values.email && values.bio && values.photo && values.password) {
+        if (values.name && values.email && values.password) {
           setValid(true);
         }
         const userData = {
@@ -75,17 +75,7 @@ const Login = () => {
           />
         )}
 
-        {!valid && (
-          <input
-            className="form-field"
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={values.name}
-            onChange={handleInputChange}
-          />
-        )}
-
+        
         {!valid && (
           <input
             className="form-field"
