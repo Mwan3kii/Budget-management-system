@@ -1,4 +1,5 @@
 const Category = require('../models/category');
+const Transaction = require('../models/transaction');
 const catchAsyncError = require('../middleware/catchAsyncErrors');
 
 exports.createCategory = catchAsyncError (async(req, res, next) => {
@@ -20,8 +21,13 @@ exports.categoryDetails = catchAsyncError (async(req, res, next) => {
     const category = await Category.findOne({
         where: { id }
     });
+    if (!category) {
+        return res.status(404).json({
+            success: false,
+            message: "The category does not exist",
+        });
     res.status(200).json(category);
-});
+}});
 
 exports.deleteCategory = catchAsyncError (async(req, res, next) => {
     console.log("Received data from frontend:", req.params);

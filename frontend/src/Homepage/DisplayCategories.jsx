@@ -29,7 +29,7 @@ const DisplayCategories = ({item}) => {
           <div className="main-dynamic-bottom-section">
             <h2>{item.name}</h2>
             <p>{item.description}</p>
-            <p>{item.createdAt}</p>
+            {/* <p>{item.createdAt}</p> */}
             <button onClick={handleSingleProduct}>View Category</button>
             <button onClick={handleDeleteCategory}>Delete Category</button>
           </div>
