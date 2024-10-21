@@ -13,6 +13,11 @@ Category.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    totalamount: {
+        type: DataTypes.FLOAT,
+        defaultValue: 0,
+        allowNull: false
+    },
     createdAt: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW
