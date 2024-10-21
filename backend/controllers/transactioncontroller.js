@@ -30,7 +30,7 @@ exports.createTransaction = catchAsyncError (async(req, res, next) => {
 
 exports.getTransactions = catchAsyncError (async(req, res, next) => {
     const { categoryId } = req.query;
-    const category = await Category.findByPk(id); // Assuming you have a Category model
+    const category = await Category.findByPk(id);
     if (!category) {
         return res.status(404).json({ message: 'Category not found.' });
     }
