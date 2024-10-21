@@ -4,14 +4,22 @@ const Category = require('../models/category');
 
 
 exports.createTransaction = catchAsyncError (async(req, res, next) => {
-    const { id } = req.params;
+    const { id } = req.params; // Category id from params
     const { name, amount } = req.body;
 
+    // Check if category exists before creating transaction
+    const category = await Category.findByPk(id);
+    if (!category) {
+        return res.status(404).json({
+            success: false,
+            message: 'Category not found'
+        });
+    }
     console.log("Received data from frontend:", req.body);
     const transaction = await Transaction.create({
         name,
         amount,
-        categoryId: id
+        category_id: category.id
     });
     console.log('Saved transaction:', transaction);
     res.status(201).json({
