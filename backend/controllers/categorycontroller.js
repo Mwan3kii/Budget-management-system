@@ -26,8 +26,20 @@ exports.categoryDetails = catchAsyncError (async(req, res, next) => {
             success: false,
             message: "The category does not exist",
         });
+    }
     res.status(200).json(category);
-}});
+
+    const transactions = await Transaction.findAll({
+        where: { category_id: id },
+    });
+    const totalAmount = transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
+    res.status(200).json({
+        success: true,
+        category,
+        transactions,
+        totalAmount
+    });
+});
 
 exports.deleteCategory = catchAsyncError (async(req, res, next) => {
     console.log("Received data from frontend:", req.params);
