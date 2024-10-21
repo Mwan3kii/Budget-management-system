@@ -23,36 +23,37 @@ const CategoryDetails = () => {
 
     const { loading, success, category, error } = useSelector((state) => state.singleCategory);
     // const { transaction } = useSelector((state) => state.transactions);
-    const { singleTran } = useSelector((state) => state.displayTransaction);
-
+    const { singleTran } = category?.transactions;
 
     return (
         <div>
             <Menu />
             <div className="container container-fluid">
-            
+
                 <h2 className="mt-3 ml-5">Category Details</h2>
                 <div className="row mt-3 user-info d-flex">
                     {loading ? (<div class="spinner-border"></div>) : (<>
                         <div className="col-11 col-md-5">
                             <div className="d-flex gap-4">
                                 <h4>Category Name:</h4>
-                                <p>{category.name}</p>
+                                <p>{category?.category.name}</p>
                             </div>
                             <hr />
                             <div className="d-flex gap-4">
                                 <h4>Description:</h4>
-                                <p>{category.description}</p>
+                                <p>{category?.category?.description}</p>
                             </div>
                             <hr />
                             <div className="d-flex gap-4">
                                 <h4>Transaction</h4>
                                 <ul>
-                                    {singleTran ? (
-                                        <li>
-                                            <h4>{singleTran.name}</h4>
-                                            <p>Amount: Ksh{singleTran.amount}</p>
-                                        </li>
+                                    {singleTran && singleTran.length > 0 ? (
+                                        singleTran.map((tran) => (
+                                            <li key={tran.id}>
+                                                <h2>{tran.name}</h2>
+                                                <p>Amount: Ksh{tran.amount}</p>
+                                            </li>
+                                        ))
                                     ) : (
                                         <p>No transactions available.</p>
                                     )}

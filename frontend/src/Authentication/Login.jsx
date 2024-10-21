@@ -52,6 +52,7 @@ const Login = () => {
       };
 
     return (
+    <div className='login'>
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         {loading ? (
@@ -98,6 +99,7 @@ const Login = () => {
           </button>
         )}
       </form>
+    </div>
     </div>
   );
 };
