@@ -24,7 +24,7 @@ const HomePage = () => {
     <div>
       <Menu />
       <div className='main-content'>
-        <Aside />
+        
           <div className='display-movies'>
             {/* <h1 style={{ marginLeft: '50px' }}>Categories</h1> */}
             {loading ? (<div class="spinner-border"></div>
