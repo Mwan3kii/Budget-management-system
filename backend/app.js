@@ -5,6 +5,8 @@ const category = require('./routes/category');
 const cors = require('cors');
 app.use(express.json());
 const transaction = require('./routes/transaction');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 const corsOptions = {
     origin: function (origin, callback) {
@@ -21,7 +23,7 @@ const corsOptions = {
   };
   
 app.use(cors(corsOptions))
-
+app.use(cookieParser());
 
 app.use('/api/v1', auth);
 app.use('/api/v1', category);

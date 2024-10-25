@@ -17,7 +17,7 @@ export const createTransaction = createAsyncThunk('displayTransaction', async ({
             },
             withCredentials: true, // Include cookies with the request
         };
-            const response = await axios.post(`${baseAPI}/${id}/transaction`, transactionData);
+            const response = await axios.post(`${baseAPI}/${id}/transaction`, transactionData, config);
             const singleProd = response.data;
             return { ...singleProd, categoryId: id };
         } catch (error) {

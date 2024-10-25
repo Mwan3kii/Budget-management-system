@@ -3,7 +3,7 @@ import './Header.css';
 import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { logout } from "../Redux/Auth/LoginUser";
+import { logoutUser } from '../Redux/Auth/LogoutUser';
 
 const Menu = () => {
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Menu = () => {
         if (confirmLogout) {
             try {
                 // Dispatch logout action
-                await dispatch(logout());
+                await dispatch(logoutUser());
                 // Redirect to login page
                 navigate("/login");
             } catch (error) {

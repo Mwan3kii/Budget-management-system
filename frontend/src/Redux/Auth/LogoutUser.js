@@ -1,25 +1,33 @@
 import axios from 'axios';
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     user: null,
     error: null,
     success: false,
     loading: false,
+    isAuthenticated: false
 }
 
 export const logoutUser = createAsyncThunk('auth/logout', async () => {
-        const logoutAPI = 'http://localhost:4000/api/v1/logout';
-        try {
-            const response = await axios.get(logoutAPI);
-            
-            return response.data;
-        } catch (error) {
-            console.error('Error logging out', error);
-            return [];
+    const localUser = JSON.parse(localStorage.getItem('user logged-in'));
+    const accessToken = localUser && localUser.token;
+
+    try {
+        const response = await axios.get('http://localhost:4000/api/v1/logout', {
+            headers: {
+                Authorization: `Bearer ${accessToken}`,
+            },
+        });
+        if (response.status === 200) {
+            localStorage.removeItem('user logged-in');
         }
-    },
-)
+        return null;
+    } catch (error) {
+        throw new Error(error.response.data.status || 'Logout failed');
+    }
+});
+
 
 const logoutSlice = createSlice({
     name: 'Login-user',
@@ -27,18 +35,14 @@ const logoutSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(logoutUser.pending, (state)=>{
-                state.loading = true; 
+            .addCase(logoutUser.pending, (state) => {
+                state.loading = true;
             })
-            .addCase(logoutUser.fulfilled, (state, action)=> {
-                state.user = action.payload;
-                state.loading = false;
-                state.success = true;
+            .addCase(logoutUser.fulfilled, (state)=>{
+                state.user = null;
             })
             .addCase(logoutUser.rejected, (state, action) => {
-                state.loading = false;
-                state.success = false;
-                state.error = action.payload
+                state.error = true
             })
     }
 })
