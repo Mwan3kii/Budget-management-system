@@ -8,12 +8,11 @@ const Menu = () => {
             <Link to={'/home'}>
                 <div className="header-firstdiv">
                     <h2 className="header-h2">BudgetPlan dashboard</h2>
-                    {/* <span className='header-span' onClick={() => navigate(-1)}>
-                🔙
-                </span> */}
-                    <Link to="/logout" style={{ color: 'black', fontSize: '22px' }}>
-                        Logout
-                    </Link>
+                    <div className='logout-header' class="fa fa-sign-out">
+                        <Link to="/logout"  style={{ color: 'white', fontSize: '22px', fontWeight: '400' }}>
+                            Logout
+                        </Link>
+                    </div>
                 </div>
             </Link>
         </header>

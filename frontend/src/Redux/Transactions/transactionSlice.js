@@ -15,7 +15,7 @@ export const createTransaction = createAsyncThunk('displayTransaction', async ({
             const singleProd = response.data;
             return { ...singleProd, categoryId: id };
         } catch (error) {
-            console.error('Error fetching single series:', error);
+            console.error('Error fetching transactions', error);
             return [];
         }
 });

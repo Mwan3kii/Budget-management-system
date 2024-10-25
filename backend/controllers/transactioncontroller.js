@@ -15,7 +15,9 @@ exports.createTransaction = catchAsyncError (async(req, res, next) => {
             message: 'Category not found'
         });
     }
+
     console.log("Received data from frontend:", req.body);
+    
     const transaction = await Transaction.create({
         name,
         amount,

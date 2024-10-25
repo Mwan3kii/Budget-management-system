@@ -8,20 +8,20 @@ const initialState = {
     loading: false
 }
 
-export const displaySingleTransaction = createAsyncThunk('displayCategory/single', async (categoryId)=> {
+export const displaySingleTransaction = createAsyncThunk('displayTransaction/single', async (categoryId)=> {
     const baseAPI = 'http://localhost:4000/api/v1/home';
         try {
             const response = await axios.get(`${baseAPI}/${categoryId}`);
             const singleProd = response.data;
             return singleProd;
         } catch (error) {
-            console.error('Error fetching single series:', error);
+            console.error('Error fetching single transaction', error);
             return [];
         }
 });
 
 const displayTransactionSlice = createSlice({
-    name: 'showSingleCategory',
+    name: 'showSingleTransaction',
     initialState,
     reducers: {},
     extraReducers: (builder) => {

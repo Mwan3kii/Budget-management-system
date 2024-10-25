@@ -50,7 +50,7 @@ const CategoryPage = ({ name, description }) => {
     <div>
       <Menu />
     <div className='category-page'>
-      <h1 style={{ textAlign: 'center', paddingTop: '5px' }}>Add new category below</h1>
+      <h2 style={{ textAlign: 'center', paddingTop: '10px', fontSize: '1.4em' }}>Add a new category below</h2>
       <div className='category-container'>
         <form onSubmit={handleSubmit}>
           {loading ? (
@@ -60,7 +60,7 @@ const CategoryPage = ({ name, description }) => {
               </div>
             ) : (<></>))}
           <div className="mb-3 mt-3">
-            <label className="form-label">Category Name:</label>
+            <label className="">Category Name:</label>
             <input
               type="text"
               className="form-control"

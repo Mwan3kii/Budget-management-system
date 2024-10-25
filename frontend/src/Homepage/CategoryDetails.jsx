@@ -23,51 +23,53 @@ const CategoryDetails = () => {
 
     const { loading, success, category, error } = useSelector((state) => state.singleCategory);
     // const { transaction } = useSelector((state) => state.transactions);
-    const { singleTran } = category?.transactions;
+    const singleTran = category?.transactions;
 
     return (
         <div>
             <Menu />
-            <div className="container container-fluid">
+            <div>
+                <div className="container container-fluid">
 
-                <h2 className="mt-3 ml-5">Category Details</h2>
-                <div className="row mt-3 user-info d-flex">
-                    {loading ? (<div class="spinner-border"></div>) : (<>
-                        <div className="col-11 col-md-5">
-                            <div className="d-flex gap-4">
-                                <h4>Category Name:</h4>
-                                <p>{category?.category.name}</p>
-                            </div>
-                            <hr />
-                            <div className="d-flex gap-4">
-                                <h4>Description:</h4>
-                                <p>{category?.category?.description}</p>
-                            </div>
-                            <hr />
-                            <div className="d-flex gap-4">
-                                <h4>Transaction</h4>
-                                <ul>
-                                    {singleTran && singleTran.length > 0 ? (
-                                        singleTran.map((tran) => (
-                                            <li key={tran.id}>
-                                                <h2>{tran.name}</h2>
-                                                <p>Amount: Ksh{tran.amount}</p>
-                                            </li>
-                                        ))
-                                    ) : (
-                                        <p>No transactions available.</p>
-                                    )}
-                                </ul>
-                            </div>
-                            <hr />
+                    <h2 style={{ fontSize: '1.7em' }} className="mt-3 ml-5">Category Details</h2>
+                    <div className="row mt-3 user-info d-flex">
+                        {loading ? (<div class="spinner-border"></div>) : (<>
+                            <div className="col-11 col-md-5">
+                                <div className="d-flex gap-4">
+                                    <h4>Category Name:</h4>
+                                    <p>{category?.category?.name}</p>
+                                </div>
+                                <hr />
+                                <div className="d-flex gap-4">
+                                    <h4>Description:</h4>
+                                    <p>{category?.category?.description}</p>
+                                </div>
+                                <hr />
+                                <div className="d-flex gap-4">
+                                    <h4>Transaction:</h4>
+                                    <ul>
+                                        {singleTran && singleTran.length > 0 ? (
+                                            singleTran.map((tran) => (
+                                                <li key={tran.id}>
+                                                    <h4>{tran.name}</h4>
+                                                    <p>Amount: Ksh{tran.amount}</p>
+                                                </li>
+                                            ))
+                                        ) : (
+                                            <p>No transactions available.</p>
+                                        )}
+                                    </ul>
+                                </div>
+                                <hr />
+                                <Transaction categoryId={id} />
+                            </div></>)}
+                    </div>
 
-                            <button type="button" className="main-dynamic-bottom-section button" data-bs-toggle="modal" data-bs-target="#myModal">
-                                Add transaction
-                            </button>
-                            <Transaction categoryId={id} />
-                        </div></>)}
                 </div>
             </div>
+        <button type="button" className="main-dynamic-bottom-section button" data-bs-toggle="modal" data-bs-target="#myModal">
+            Add transaction
+        </button>
         </div>
     )
 }

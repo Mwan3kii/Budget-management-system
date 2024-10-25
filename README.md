@@ -25,7 +25,7 @@ This project is a **Mobile Web Application** designed to help users manage their
 
 3. **💸 Add Transactions**: Within each category, you can log your transactions, specifying details such as amount and description.
 
-4. **📝 Manage Transactions**: View and delete any transaction to keep your budget up-to-date.
+4. **📝 Manage Transactions**: View transactions to keep your budget up-to-date.
 
 5. **🗑️ Delete Categories**: Remove any category and its associated transactions when they are no longer needed.
 
@@ -68,13 +68,10 @@ npm install
 PORT=''
 DATABASE_URL=''
 NODE_ENV = DEVELOPMENT
-COOKIE_EXPIRATION_TIME = 'cookie_expiration_time'
-JWT_EXPIRES_TIME = 'expiration_time'
-JWT_SECRET='your_jwt_secret'
 ```
 5. **Start the backend server**:
 ```
-npm start
+npm run production
 ```
 ## For frontend setup
 6. **Navigate to the frontend folder**:
@@ -87,7 +84,7 @@ npm install
 ```
 8. **Start the development server:**
 ```
-npm start
+npm run production
 ```
 9. **Access the app in your browser** `http://localhost:3000`
 ### Deployed site:

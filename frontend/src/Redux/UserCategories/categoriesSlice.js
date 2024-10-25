@@ -15,7 +15,7 @@ export const displayCategories = createAsyncThunk('displayCategory/all', async (
             
             return response.data;
         } catch (error) {
-            console.error('Error fetching series:', error);
+            console.error('Error fetching categories', error);
             return [];
         }
     },

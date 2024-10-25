@@ -2,12 +2,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #3778c2;
+    padding-top: 5px;
+    color: white;
 }
 
-.header-firstdiv {
-    display: flex;
-    align-items: center;
-}
 
 .header-img,
 
@@ -15,35 +14,14 @@
 .header-h2 {
     font-size: 29px;
     font-family: Lexend, sans-serif;
+    margin-left: 0px;
+    margin-top: 5px;
+    color: white;
 }
 
 .header-seconddiv {
     display: flex;
     align-items: center;
-}
-
-.header-listing {
-    margin-right: 18px;
-    padding: 8px 9px;
-    color: blue;
-    font-weight: 700;
-    font-family: Lexend, sans-serif;
-    border-radius: 10px;
-    background-color: #fff;
-    border: 1px solid black;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.6);
-    cursor: pointer;
-}
-
-.header-user {
-    font-family: Lexend, sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 1px solid black;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
 .header-span {
@@ -56,41 +34,6 @@
     margin-top: 20px;
     margin-right: 10px;
     margin-left: 50px;
-}
-
-.search-section {
-    width: 300px;
-    height: 30px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-    border: 1px solid black;
-    padding-left: 15px;
-    font-family: lexend, sans-serif;
-}
-
-.filter-button {
-    width: 90px;
-    height: 30px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-    border: 1px solid black;
-    padding-left: 50px;
-    font-family: lexend, sans-serif;
-    background-color: #fff;
-    color: #081e4a;
-}
-
-.material-symbols-outlined {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 25px;
-    pointer-events: none;
-}
-
-.search-container {
-    position: relative;
 }
 
 .filter-container {
@@ -115,4 +58,21 @@
 .side-bar li .material-symbols-outlined {
     position: relative;
     left: 40px;
+}
+
+@media(min-width: 768px) {
+    .header-firstdiv {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media(min-width: 1024px) {
+    .header-firstdiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 900px;
+    }
+    
 }

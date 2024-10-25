@@ -19,28 +19,23 @@ const HomePage = () => {
   const handleAddCategory = () => {
     navigate('/category');
   };
-  console.log(categories);
   return (
     <div>
       <Menu />
+      <h1 className='title'>Categories</h1>
       <div className='main-content'>
+        {loading ? (<div class="spinner-border"></div>
+        ) : (
 
-        <div className='display-movies'>
-          {/* <h1 style={{ marginLeft: '50px' }}>Categories</h1> */}
-          {loading ? (<div class="spinner-border"></div>
-          ) : (
-            categories.map((item) => (
-              <DisplayCategories item={item} key={item.id} />
-            ))
-          )
-          }
-        </div>
+          categories?.map((item) => (
+            <DisplayCategories item={item} key={item.id} />
+          ))
+        )}
       </div>
-      <button onClick={handleAddCategory} className="btn btn-primary">
+      <button onClick={handleAddCategory} className='category-button'>
         Add New Category
       </button>
     </div>
-
   );
 };
 
