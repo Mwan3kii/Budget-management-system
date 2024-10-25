@@ -2,21 +2,33 @@ const Category = require('../models/category');
 const Transaction = require('../models/transaction');
 const catchAsyncError = require('../middleware/catchAsyncErrors');
 
-exports.createCategory = catchAsyncError (async(req, res, next) => {
+exports.createCategory = catchAsyncError(async (req, res, next) => {
     const { name, description } = req.body;
-    console.log("Received data from frontend:", req.body);
-    const user = await Category.create({
-        name,
-        description
-    });
+    try {
+        const category = await Category.create({
+            name,
+            description,
+        });
+        res.status(201).json({
+            success: true,
+            message: "Category created successfully.",
+            category,
+        });
+    } catch (err) {
+        res.status(400).json({
+            success: false,
+            message: "The category was not created.",
+            error: err,
+        });
+    }
 });
 
-exports.getCategories = catchAsyncError (async(req, res, next) => {
+exports.getCategories = catchAsyncError(async (req, res, next) => {
     const categories = await Category.findAll();
     res.json(categories);
 });
 
-exports.categoryDetails = catchAsyncError (async(req, res, next) => {
+exports.categoryDetails = catchAsyncError(async (req, res, next) => {
     const { id } = req.params;
     const category = await Category.findOne({
         where: { id }
@@ -34,8 +46,8 @@ exports.categoryDetails = catchAsyncError (async(req, res, next) => {
     const totalAmount = transactions.reduce((acc, transaction) => acc + transaction.amount, 0);
 
     await Category.update(
-        {totalamount: totalAmount},
-        {where: { id }}
+        { totalamount: totalAmount },
+        { where: { id } }
     )
 
     res.status(200).json({
@@ -46,10 +58,9 @@ exports.categoryDetails = catchAsyncError (async(req, res, next) => {
     });
 });
 
-exports.deleteCategory = catchAsyncError (async(req, res, next) => {
-    console.log("Received data from frontend:", req.params);
+exports.deleteCategory = catchAsyncError(async (req, res, next) => {
     const { id } = req.params;
-    
+
     const category = await Category.destroy({
         where: { id }
     });
