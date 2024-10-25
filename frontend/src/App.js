@@ -8,6 +8,7 @@ import CategoryDetails from './Homepage/CategoryDetails';
 import Logout from './Authentication/Logout';
 import LandingPage from './Splashscreen/LandingPage';
 import About from './Splashscreen/About';
+import ProtectedRoute from './Authentication/ProtectedRoute';
 
 
 function App() {
@@ -16,13 +17,15 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path='/signup' element={<Register/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/home' element={<HomePage/>}/>
-          <Route path='/logout' element={<Logout/>}/>
-          <Route path="/category" element={<CategoryPage />} />
-          <Route path='/home/:id' element={<CategoryDetails/>}/>
-          <Route path='/about' element={<About/>}/>
+          <Route path='/about' element={<About />} />
+          <Route path='/signup' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path='/home' element={<HomePage />} />
+            <Route path='/logout' element={<Logout />} />
+            <Route path="/category" element={<CategoryPage />} />
+            <Route path='/home/:id' element={<CategoryDetails />} />
+          </Route>
         </Routes>
       </Router>
     </div>
