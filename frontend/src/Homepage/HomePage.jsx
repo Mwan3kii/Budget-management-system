@@ -12,12 +12,16 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(displayCategories());
   }, [dispatch]);
+
   const { loading, success, categories, error } = useSelector((state) => state.categories);
+
+  const retrievedCategories = categories.categories;
 
   const navigate = useNavigate();
   const handleAddCategory = () => {
     navigate('/category');
   };
+  
   return (
     <div>
       <Menu />
@@ -25,8 +29,7 @@ const HomePage = () => {
       <div className='main-content'>
         {loading ? (<div class="spinner-border"></div>
         ) : (
-
-          categories?.map((item) => (
+          retrievedCategories?.map((item) => (
             <DisplayCategories item={item} key={item.id} />
           ))
         )}

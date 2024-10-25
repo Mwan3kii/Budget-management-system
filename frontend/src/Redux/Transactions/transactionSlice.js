@@ -8,9 +8,15 @@ const initialState = {
     loading: false
 }
 
-export const createTransaction = createAsyncThunk('displayTransaction', async ({id, transactionData})=> {
+export const createTransaction = createAsyncThunk('displayTransaction', async ({ id, transactionData }) => {
     const baseAPI = 'http://localhost:4000/api/v1/home';
-        try {
+    try {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            withCredentials: true, // Include cookies with the request
+        };
             const response = await axios.post(`${baseAPI}/${id}/transaction`, transactionData);
             const singleProd = response.data;
             return { ...singleProd, categoryId: id };
@@ -18,7 +24,7 @@ export const createTransaction = createAsyncThunk('displayTransaction', async ({
             console.error('Error fetching transactions', error);
             return [];
         }
-});
+    });
 
 
 const transactionSlice = createSlice({
@@ -27,10 +33,10 @@ const transactionSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            .addCase(createTransaction.pending, (state)=>{
-                state.loading = true; 
+            .addCase(createTransaction.pending, (state) => {
+                state.loading = true;
             })
-            .addCase(createTransaction.fulfilled, (state, action)=> {
+            .addCase(createTransaction.fulfilled, (state, action) => {
                 state.transaction = action.payload;
                 state.loading = false;
                 state.success = true;
