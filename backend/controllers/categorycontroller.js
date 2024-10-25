@@ -24,8 +24,19 @@ exports.createCategory = catchAsyncError(async (req, res, next) => {
 });
 
 exports.getCategories = catchAsyncError(async (req, res, next) => {
-    const categories = await Category.findAll();
-    res.json(categories);
+    try {
+        const categories = await Category.findAll();
+        res.status(200).json({
+            success: true,
+            categories,
+        });
+    } catch (err) {
+        res.status(400).json({
+            success: false,
+            message: "The Categories Have not Loaded",
+            error: err,
+        });
+    }
 });
 
 exports.categoryDetails = catchAsyncError(async (req, res, next) => {
