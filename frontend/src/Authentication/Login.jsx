@@ -4,6 +4,7 @@ import { loginUser } from "../Redux/Auth/LoginUser";
 import { useDispatch, useSelector } from "react-redux";
 import "../Authentication/Auth.css";
 import { Navigate, useNavigate, Link } from 'react-router-dom';
+import Menu from '../Header/Menu';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -55,50 +56,52 @@ const Login = () => {
   }
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        {loading ? (
-          <div className="spinner-border"></div>) : (success ? submitted && valid && (
+    <div className='auth-container'>
+      <div className="login-container">
+        <form className="login-form" onSubmit={handleSubmit}>
+          {loading ? (
+            <div className="spinner-border"></div>
+          ) : (success ? submitted && valid && (
             <div className="success-message">
               <h3>Welcome {values.name}{" "}</h3>
               <div> Your login was successful! </div>
             </div>
           ) : (<></>))}
-        <h2>Welcome Back!</h2>
-        {!valid && (
-          <input
-            className="form-field"
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={values.email}
-            onChange={handleInputChange}
-          />
-        )}
+          {!valid && (
+            <input
+              className="form-field"
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={values.email}
+              onChange={handleInputChange}
+            />
+          )}
 
 
-        {!valid && (
-          <input
-            className="form-field"
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-            value={values.password}
-            onChange={handleInputChange}
-            required
-          />
-        )}
+          {!valid && (
+            <input
+              className="form-field"
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              value={values.password}
+              onChange={handleInputChange}
+              required
+            />
+          )}
 
-        {submitted && !values.email && (
-          <span id="email-error">Please enter email</span>
-        )}
-        {!valid && (
-          <button className="form-field" type="submit">
-            Login
-          </button>
-        )}
-      </form>
-      <p>Don't have an account? <Link to="/signup">Signup now</Link></p>
+          {submitted && !values.email && (
+            <span id="email-error">Please enter email</span>
+          )}
+          {!valid && (
+            <button className="form-field" type="submit">
+              Login
+            </button>
+          )}
+        </form>
+        <p>Don't have an account? <Link to="/signup">Signup now</Link></p>
+      </div>
     </div>
   );
 };

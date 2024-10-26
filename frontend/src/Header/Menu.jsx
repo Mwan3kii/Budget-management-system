@@ -9,6 +9,9 @@ const Menu = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const userName = JSON.parse(localStorage.getItem('user logged-in'));
+    const user = userName.user.name;
+
     const handleLogout = async () => {
         // Add confirmation dialog
         const confirmLogout = window.confirm("Are you sure you want to logout?");
@@ -33,12 +36,21 @@ const Menu = () => {
                 <Link to={'/home'}>
                     <h2 className="header-h2">BudgetPlan dashboard</h2>
                 </Link>
-                <div className='logout-header' class="fa fa-sign-out">
+                {/* <div className="header-span fa fa-user"> */}
+                    {user && (
+                        <div>
+                            <p>Hello, {user}!</p>
+                        </div>
+                    )}
+                {/* </div> */}
+                <div className='logout-header'>
+                    <span className="header-span fa fa-sign-out "></span>
                     <NavLink
-                        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                        className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-large font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                         onClick={handleLogout}
                         data-te-dropdown-item-ref
                     >
+
                         Logout
                     </NavLink>
                 </div>

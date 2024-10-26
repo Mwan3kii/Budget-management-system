@@ -9,6 +9,8 @@ const DisplayCategories = ({ item }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const { success } = useSelector((state) => state.categories);
+
   const handleSingleProduct = () => {
     navigate(`/home/${item.id}`, {
       state: {
@@ -18,10 +20,13 @@ const DisplayCategories = ({ item }) => {
   }
 
   const handleDeleteCategory = () => {
-    dispatch(deleteCategory(item.id));
-    // console.log("Categories after deletion:", categories);
-
-    navigate('/home');
+    dispatch(deleteCategory(item.id))
+      .then(() => {
+        if (success) {
+          dispatch(displayCategories());
+          navigate('/home');
+        }
+      });
   };
 
   return (

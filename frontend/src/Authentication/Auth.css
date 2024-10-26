@@ -53,9 +53,10 @@
 
 span {
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    color: red;
+    font-size: 19px;
+    color: whitesmoke;
     margin-bottom: 15px;
+    margin-right: 0px;
 }
 
 input {

@@ -20,9 +20,9 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/signup' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/logout' element={<Logout />} />
           <Route element={<ProtectedRoute />}>
             <Route path='/home' element={<HomePage />} />
-            <Route path='/logout' element={<Logout />} />
             <Route path="/category" element={<CategoryPage />} />
             <Route path='/home/:id' element={<CategoryDetails />} />
           </Route>

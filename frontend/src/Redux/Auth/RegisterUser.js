@@ -11,7 +11,11 @@ const initialState = {
 export const registerUser = createAsyncThunk('auth/register', async (userData) => {
         const registerAPI = 'http://localhost:4000/api/v1/register';
         try {
-            const response = await axios.post(registerAPI, userData);
+            const config = {
+                headers: { 'Content-Type': 'application/json' },
+                withCredentials: true, // Include cookies with the request
+            };
+            const response = await axios.post(registerAPI, userData, config);
             
             return response.data;
         } catch (error) {

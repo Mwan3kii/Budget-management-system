@@ -3,7 +3,6 @@ const app = express()
 const auth = require('./routes/auth');
 const category = require('./routes/category');
 const cors = require('cors');
-app.use(express.json());
 const transaction = require('./routes/transaction');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -21,8 +20,9 @@ const corsOptions = {
     credentials: true,
     optionsSuccessStatus: 200,
   };
-  
-app.use(cors(corsOptions))
+
+app.use(express.json());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 app.use('/api/v1', auth);

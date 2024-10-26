@@ -72,11 +72,18 @@ exports.categoryDetails = catchAsyncError(async (req, res, next) => {
 exports.deleteCategory = catchAsyncError(async (req, res, next) => {
     const { id } = req.params;
 
-    const category = await Category.destroy({
-        where: { id }
-    });
+    const category = await Category.findOne({ where: { id } });
+
     if (!category) {
-        return res.status(404).json({ message: 'Category not found' });
+        return res.status(404).json({ message: "Category not found" });
     }
-    res.status(200).json({ message: 'Category deleted successfully', category });
+
+    await Transaction.destroy({ where: { category_id: id } });
+
+    await Category.destroy({ where: { id } });
+
+    res.status(200).json({
+        success: true,
+        message: "Category and associated transactions deleted successfully",
+    });
 });
