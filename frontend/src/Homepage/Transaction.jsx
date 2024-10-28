@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Transaction = ({ categoryId }) => {
-    console.log(categoryId);
+   
     const dispatch = useDispatch();
     const [newTransaction, setNewTransaction] = useState({
         name: '',
@@ -29,10 +29,15 @@ const Transaction = ({ categoryId }) => {
             amount: newTransaction.amount,
             categoryId: categoryId
         };
-        dispatch(createTransaction({ id: categoryId, transactionData }));
-        dispatch(displaySingleTransaction(categoryId));
-        navigate(`/home/${categoryId}`);
-        // setNewTransaction({ name: '', amount: '' }); // Reset the state
+        try {
+            // Wait for the transaction to be created before navigating
+            dispatch(createTransaction({ id: categoryId, transactionData }));
+            navigate(`/home/${categoryId}`);
+            dispatch(displaySingleTransaction(categoryId));
+            window.location.reload();
+        } catch (error) {
+            console.error("Transaction creation failed:", error);
+        }
     };
 
     return (

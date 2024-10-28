@@ -128,7 +128,7 @@ const Register = () => {
             </button>
           )}
         </form>
-        <p style={{ paddingTop: '5px' }}>Already have an account? <Link to="/login">Login</Link></p>
+        <p style={{ paddingTop: '5px' }}>Already have an account? <Link to="/login" className='auth-redirect'>Login</Link></p>
       </div>
     </div>
   );

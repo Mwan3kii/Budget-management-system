@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { loginUser } from "../Redux/Auth/LoginUser";
 import { useDispatch, useSelector } from "react-redux";
 import "../Authentication/Auth.css";
@@ -8,102 +8,70 @@ import Menu from '../Header/Menu';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const { loading, success, error } = useSelector((state) => state.loginuser);
-  const [values, setValues] = useState({
-    email: "",
-    password: ""
-  });
+  const navigate = useNavigate();
+  const { loading, success, error, user } = useSelector((state) => state.loginuser);
+  const [values, setValues] = useState({ email: "", password: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-  const localUser = JSON.parse(localStorage.getItem("user logged-in"));
-  const token = localUser?.token;
+  useEffect(() => {
+    const localUser = JSON.parse(localStorage.getItem("user logged-in"));
+    if (localUser?.token && success) {
+      navigate("/home");
+    }
+  }, [success, navigate]);
 
   const handleInputChange = (event) => {
-    event.preventDefault();
-
     const { name, value } = event.target;
-    setValues((values) => ({
-      ...values,
-      [name]: value
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
     }));
   };
 
-  const [submitted, setSubmitted] = useState(false);
-  const [valid, setValid] = useState(false);
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitted(true);
     if (values.email && values.password) {
-      setValid(true);
-    }
-    const userData = {
-      email: values.email,
-      password: values.password
-    };
-    try {
-      dispatch(loginUser(userData));
-      setSubmitted(true);
-    } catch (err) {
-      console.log(err);
+      dispatch(loginUser(values));
     }
   };
-  const navigate = useNavigate();
-  if (success) {
-    navigate("/home");
-  }
 
-  if (token) {
-    return <Navigate to="/home" />;
-  }
+return (
+  <div className='auth-container'>
+    <div className="login-container">
+      <h2>Login</h2>
+      <form className="login-form" onSubmit={handleSubmit}>
+        {loading && <div className="spinner-border"></div>}
+        {error && <div className="error-message">{error}</div>}
+        <input
+          className="form-field"
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={values.email}
+          onChange={handleInputChange}
+        />
+        <input
+          className="form-field"
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          value={values.password}
+          onChange={handleInputChange}
+          required
+        />
 
-  return (
-    <div className='auth-container'>
-      <div className="login-container">
-        <form className="login-form" onSubmit={handleSubmit}>
-          {loading ? (
-            <div className="spinner-border"></div>
-          ) : (success ? submitted && valid && (
-            <div className="success-message">
-              <h3>Welcome {values.name}{" "}</h3>
-              <div> Your login was successful! </div>
-            </div>
-          ) : (<></>))}
-          {!valid && (
-            <input
-              className="form-field"
-              type="email"
-              placeholder="Email"
-              name="email"
-              value={values.email}
-              onChange={handleInputChange}
-            />
-          )}
-
-
-          {!valid && (
-            <input
-              className="form-field"
-              type="password"
-              placeholder="Enter Password"
-              name="password"
-              value={values.password}
-              onChange={handleInputChange}
-              required
-            />
-          )}
-
-          {submitted && !values.email && (
-            <span id="email-error">Please enter email</span>
-          )}
-          {!valid && (
-            <button className="form-field" type="submit">
-              Login
-            </button>
-          )}
-        </form>
-        <p>Don't have an account? <Link to="/signup">Signup now</Link></p>
-      </div>
+        {submitted && !values.email && (
+          <span id="email-error">Please enter email</span>
+        )}
+          <button className="form-field" type="submit">
+            Login
+          </button>
+      </form>
+      <p>Don't have an account? <Link to="/signup" className='auth-redirect'>Signup now</Link></p>
     </div>
-  );
+  </div>
+);
 };
 
 export default Login;

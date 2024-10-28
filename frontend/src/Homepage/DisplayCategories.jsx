@@ -38,7 +38,6 @@ const DisplayCategories = ({ item }) => {
               <p className="total-amount">Ksh.{item.totalamount}</p>
             </h2>
             <hr />
-            <p>{item.createdAt}</p>
             <button onClick={handleSingleProduct}>View Category</button>
             <button onClick={handleDeleteCategory}>Delete Category</button>
           </div>

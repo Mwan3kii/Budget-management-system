@@ -17,7 +17,7 @@ const CategoryDetails = () => {
     useEffect(() => {
         dispatch(displaySingleCategory(id));
         // dispatch(createTransaction(id));
-        console.log('Current Transactions:', singleTran);
+        
         dispatch(displaySingleTransaction(id));
     }, [dispatch, id]);
 
@@ -29,12 +29,11 @@ const CategoryDetails = () => {
         <div>
             <Menu />
             <div>
-                <div className="container container-fluid">
-
+                <div className="details-container">
                     <h2 style={{ fontSize: '1.7em' }} className="mt-3 ml-5">Category Details</h2>
-                    <div className="row mt-3 user-info d-flex">
+                    <div className="row ml-5 mt-3 user-info d-flex">
                         {loading ? (<div class="spinner-border"></div>) : (<>
-                            <div className="col-11 col-md-5">
+                            <div className="col-11 col-md-5 ml-5">
                                 <div className="d-flex gap-4">
                                     <h4>Category Name:</h4>
                                     <p>{category?.category?.name}</p>
@@ -45,7 +44,7 @@ const CategoryDetails = () => {
                                     <p>{category?.category?.description}</p>
                                 </div>
                                 <hr />
-                                <div className="d-flex gap-4">
+                                <div className="transactions d-flex gap-4">
                                     <h4>Transaction:</h4>
                                     <ul>
                                         {singleTran && singleTran.length > 0 ? (
@@ -60,7 +59,6 @@ const CategoryDetails = () => {
                                         )}
                                     </ul>
                                 </div>
-                                <hr />
                                 <Transaction categoryId={id} />
                             </div></>)}
                     </div>

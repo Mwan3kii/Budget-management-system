@@ -33,6 +33,9 @@ const HomePage = () => {
             <DisplayCategories item={item} key={item.id} />
           ))
         )}
+          {(!retrievedCategories || retrievedCategories.length === 0) && (
+            <p className='display-message'>~ No categories created. Create your category in the button below</p>
+          )}
       </div>
       <button onClick={handleAddCategory} className='category-button'>
         Add New Category
